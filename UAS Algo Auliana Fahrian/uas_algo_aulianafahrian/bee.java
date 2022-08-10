@@ -1,9 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.DriverManager;
-import java.sql.Statement;
-
+import java.sql.*;
 /**
  * Write a description of class bee here.
  * 
@@ -25,16 +21,16 @@ public class bee extends Actor
         w = String.valueOf(w);
     }
     private void checkKeyPress(String w){
-        if (s.equals("w")){
+        if (w.equals("w")){
              setLocation(getX(), getY()+5);
         }
-        if (s.equals("a")){
+        if (w.equals("a")){
              setLocation(getX(), getY()-5);
         }
-        if (s.equals("s")){
+        if (w.equals("s")){
              setLocation(getX()-5, getY());
         }
-        if (s.equals("d")){
+        if (w.equals("d")){
              setLocation(getX()+5, getY());
         }
     }
