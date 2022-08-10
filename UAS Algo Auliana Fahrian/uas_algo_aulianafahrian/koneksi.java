@@ -25,8 +25,8 @@ public class koneksi
                 Statement stmt = conn.createStatement();
                 ResultSet kunci = stmt.executeQuery(query); 
                 
-                while(gerak.next()){                   
-                    a = gerak.getString("gerak");
+                while(kunci.next()){                   
+                    a = kunci.getString("gerak");
                 }  
                 
             } catch (SQLException e) {
