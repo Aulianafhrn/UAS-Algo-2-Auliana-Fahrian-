@@ -39,4 +39,11 @@ public class koneksi
             System.out.println(e);
         }//end try catch
     }
+    
+    public static String sampleMethod()
+    {
+        // put your code here
+        
+        return a;
+    }
 
