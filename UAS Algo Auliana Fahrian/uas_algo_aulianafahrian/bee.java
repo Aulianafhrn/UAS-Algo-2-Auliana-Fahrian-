@@ -18,43 +18,24 @@ public class bee extends Actor
      */
     public void act()
     {
-        tampil_data();
-        kunci_kontrol();
+        koneksi koneksi = new koneksi();
+        String w = koneksi.sampleMethod();
+        getWorld().showText("Isi Database = " + w, 120, 30);
+        checkKeyPress(w);
+        w = String.valueOf(w);
     }
-    public void tampil_data(){
-        try{
-            String sql = "SELECT * FROM gerak";
-            java.sql.Connection conn = (Connection)koneksi.koneksi();
-            java.sql.Statement stm = conn.createStatement();
-            java.sql.ResultSet res = stm.executeQuery(sql);
-            while(res.next()){
-                res.getString("kunci database: "+res.getString(1));
-            }
-        }catch (Exception e){
-            
+    private void checkKeyPress(String w){
+        if (s.equals("w")){
+             setLocation(getX(), getY()+5);
         }
-    }
-    
-    public void kunci_kontrol()
-    {
-        if(Greenfoot.isKeyDown("d"))
-        {
-            move(5);
+        if (s.equals("a")){
+             setLocation(getX(), getY()-5);
         }
-        
-        if(Greenfoot.isKeyDown("a"))
-        {
-            move(-5);
+        if (s.equals("s")){
+             setLocation(getX()-5, getY());
         }
-        
-        if(Greenfoot.isKeyDown("s"))
-        {
-            setLocation(getX(),getY()+5);
-        }
-        
-        if(Greenfoot.isKeyDown("w"))
-        {
-            setLocation(getX(),getY()-5);
+        if (s.equals("d")){
+             setLocation(getX()+5, getY());
         }
     }
 }
